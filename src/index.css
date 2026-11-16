@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background: #f0f2f8;
+  color: #1e293b;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  text-align: left;
+}
+
+a  { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+input, select, textarea { font-family: 'Inter', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Inter', sans-serif; font-weight: 700; }
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.fade-in { animation: fadeIn 0.35s ease forwards; }
+
+/* ── Dark mode base ── */
+html.dark-mode,
+html.dark-mode body {
+  background: #0d1117;
+  color: #e6edf3;
+}
+
+/* ── Fix Chrome autofill overriding input backgrounds in dark mode ── */
+html.dark-mode input:-webkit-autofill,
+html.dark-mode input:-webkit-autofill:hover,
+html.dark-mode input:-webkit-autofill:focus,
+html.dark-mode input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 40px #1c2333 inset !important;
+  -webkit-text-fill-color: #e6edf3 !important;
+  caret-color: #e6edf3;
+}
+
+/* Light mode autofill fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 40px #f8fafc inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+  caret-color: #0f172a;
+}
