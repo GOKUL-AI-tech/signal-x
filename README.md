@@ -11,10 +11,13 @@ College complaint management system for Nehru Arts & Science College, Coimbatore
 - In the SQL Editor, paste and run the contents of `supabase_schema.sql`
 
 ### 2. Add your Supabase keys
-Edit `.env` and replace the placeholders:
+Copy the template and fill in your values:
+```bash
+cp .env.example .env
 ```
-VITE_SUPABASE_URL=https://your-project-id.supabase.co
-VITE_SUPABASE_ANON_KEY=your-anon-key-here
+```
+VITE_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 ```
 Find these in Supabase → Settings → API
 
